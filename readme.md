@@ -99,6 +99,7 @@ Available generators:
 * Deployment
     - [angular-fullstack:openshift](#openshift)
     - [angular-fullstack:heroku](#heroku)
+    - [angular-fullstack:deis](#deis)
 
 ### App
 Sets up a new AngularJS + Express app, generating all the boilerplate you need to get started.
@@ -302,6 +303,47 @@ To make your deployment process easier consider using [grunt-build-control](http
 Commit and push the resulting build, located in your dist folder:
 
     grunt buildcontrol:openshift
+
+### Deis
+
+Deploying to deis is easy.
+
+    yo angular-fullstack:deis
+
+To work with your new deis app using the command line, you will need to run any `deis` commands from the `dist` folder.
+
+
+If you're using mongoDB you will need to tell your app where to look for MongoDB:
+
+    deis config:set MONGOLAB_URI=mongodb://path/to/mongodb
+
+Your app should now be live. To view it run `deis open`.
+
+>
+> If you're using any oAuth strategies, you must set environment variables for your selected oAuth. For example, if we're using **Facebook** oAuth we would do this :
+>
+>     deis config:set FACEBOOK_ID=id
+>     deis config:set FACEBOOK_SECRET=secret
+>
+> You will also need to set `DOMAIN` environment variable:
+>
+>     deis config:set DOMAIN=<your-deis-app-name>.<your-deis-domain>
+>
+>     # or (if you're using it):
+>
+>     heroku config:set DOMAIN=<your-custom-domain>
+>
+
+To make your deployment process easier consider using [grunt-build-control](https://github.com/robwierzbowski/grunt-build-control).
+
+#### Pushing Updates
+
+    grunt
+
+Commit and push the resulting build, located in your dist folder:
+
+    grunt buildcontrol:deis
+
 
 ### Heroku
 

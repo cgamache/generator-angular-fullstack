@@ -42,8 +42,8 @@ var User = sqldb.User;<% } %><% } %>
              'names for caching.'
     }, {
       name: 'Deployment Ready',
-      info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
-             'and openshift subgenerators'
+      info: 'Easily deploy your app to Heroku, Openshift, and Deis with the heroku, ' +
+             'openshift and deis subgenerators'
     <% if (filters.mongooseModels) { %>});<% }
        if (filters.sequelizeModels) { %>}]);<% } %>
   });

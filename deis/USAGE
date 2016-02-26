@@ -1,0 +1,8 @@
+Description:
+    Initalizes an deis app and generates a `dist` folder and pushes it to deis.
+
+Example:
+    yo angular-fullstack:deis
+
+    This will create:
+        a dist folder and initialize an deis app

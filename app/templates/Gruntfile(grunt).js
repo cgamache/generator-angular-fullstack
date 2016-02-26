@@ -461,6 +461,12 @@ module.exports = function (grunt) {
           remote: 'openshift',
           branch: 'master'
         }
+      },
+      deis: {
+        options: {
+          remote: 'deis',
+          branch: 'master'
+        }
       }
     },
 
